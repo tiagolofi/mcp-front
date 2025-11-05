@@ -108,8 +108,6 @@ class PulseWidget(QWidget):
             self.open_dialog()
 
     def open_login_dialog(self):
-        global token
-
         login_dialog = QDialog(self)
         login_dialog.setWindowTitle("Login")
         login_dialog.resize(200, 200)
@@ -160,7 +158,7 @@ class PulseWidget(QWidget):
         dialog.setWindowTitle("Configurações do MCP")
         dialog.setWindowModality(Qt.ApplicationModal)
         dialog.setAttribute(Qt.WA_DeleteOnClose)
-        dialog.resize(600, 900)
+        dialog.resize(700, 1000)
 
         splitter = QSplitter()
 

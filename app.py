@@ -37,7 +37,7 @@ class PulseWidget(QWidget):
         self.anim = QPropertyAnimation(self, b'scale')
         self.anim.setStartValue(min_scale)
         self.anim.setEndValue(max_scale)
-        self.anim.setDuration(1000)
+        self.anim.setDuration(900)
         self.anim.setEasingCurve(QEasingCurve.InOutSine)
         self.anim.setLoopCount(-1)
         self.anim.start()
@@ -85,7 +85,7 @@ class PulseWidget(QWidget):
         core_color = QColor(base_color)
         core_color.setAlpha(230)
         painter.setBrush(core_color)
-        painter.drawEllipse(center, int((min(w, h) / 2) * 0.4), int((min(w, h) / 2) * 0.4))
+        painter.drawEllipse(center, int((min(w, h) / 2) * 0.6), int((min(w, h) / 2) * 0.6))
 
     def mousePressEvent(self, event):
         if event.button() == Qt.LeftButton:

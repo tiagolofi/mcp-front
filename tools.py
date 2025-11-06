@@ -4,6 +4,8 @@ from PySide6.QtWidgets import (
     QLabel, QTextEdit, QPushButton # inputs
 )
 
+from PySide6.QtCore import QTimer
+
 from typing import List, Dict
 
 from mcp import Mcp
@@ -21,6 +23,9 @@ class Tools(QWidget):
         self.main()
 
     def main(self):
+
+        # Login dialog at start
+        QTimer.singleShot(200, self.login.main)
 
         self.layout.addWidget(QLabel('Tools'))
         resumo_tools = QTextEdit()

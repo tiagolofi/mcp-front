@@ -1,6 +1,6 @@
 
 from PySide6.QtWidgets import (
-    QWidget,QVBoxLayout,  # layout
+    QWidget, QVBoxLayout, QDialog, # layout
     QLabel, QLineEdit, QPushButton # inputs
 )
 
@@ -8,17 +8,16 @@ from typing import List, Dict
 
 from mcp import Mcp
 
-class Login(QWidget):
+class Login(QDialog):
 
     def __init__(self) -> None:
         super().__init__()    
 
         self.token = None
         self.username = None
+        self.resize(200, 200)
 
         self.layout = QVBoxLayout(self)
-        
-        self.main()
 
     def __addWidget(self, widgets: List[QWidget]) -> None:
         for i in widgets:
@@ -38,8 +37,11 @@ class Login(QWidget):
             self.token = Mcp.login({'username': self.username.text(), 'password': password.text()})
             password.clear()
             print(self.get_contexto())
+            self.accept()
 
         btn_login.clicked.connect(do_login)
+
+        self.exec()
 
 
     def get_contexto(self) -> Dict[str, str]:

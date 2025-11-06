@@ -8,7 +8,7 @@ from typing import List, Tuple, Dict
 
 from mcp import Mcp
 
-class Panel(QGroupBox):
+class Request(QGroupBox):
     def __init__(self, login: QWidget) -> None:
         super().__init__()
 

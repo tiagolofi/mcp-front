@@ -5,7 +5,7 @@ from PySide6.QtCore import Qt
 import sys
 
 from cache import Cache
-from login import Login
+# from login import Login
 from request import Request
 from response import Response
 from sidebar import Sidebar
@@ -19,7 +19,7 @@ class App(QWidget):
         self.setWindowTitle('App')
 
         # telas
-        self.login = Login()
+        # self.login = Login()
         self.resize(700, 700)
 
         self.layout = QGridLayout(self)
@@ -27,14 +27,16 @@ class App(QWidget):
 
         self.views = QTabWidget()
 
-        self.tools = Tools(self.login)
+        self.tools = Tools() 
         self.views.addTab(self.tools, 'Tools')
 
-        self.request = Request(self.login)
+        self.request = Request()
         self.views.addTab(self.request, 'Painel')
 
-        self.response = Response(self.request, self.login)
+        self.response = Response(self.request)
         self.views.addTab(self.response, 'Resposta')
+
+        self.sidebar.create_tabs()
 
         self.layout.addWidget(self.sidebar, 0, 0)
         self.layout.addWidget(self.views, 0, 1)

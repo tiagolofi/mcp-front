@@ -2,8 +2,18 @@
 import requests
 import json
 from typing import List, Dict, Any
+from dotenv import load_dotenv
+from os import getenv
+
+load_dotenv(override=True)
+
+MCP_USERNAME = getenv('MCP_USERNAME')
+MCP_PASSWORD = getenv('MCP_PASSWORD')
 
 class Mcp:
+
+    def login_no_credentials():
+        return Mcp.login(data = {'username': MCP_USERNAME, 'password': MCP_PASSWORD})
 
     def login(data: Dict[str, str]):
         return requests.post("https://mcp-server-client-4dc341cd8433.herokuapp.com/login", json = data, timeout = 5).text.strip()

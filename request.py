@@ -9,7 +9,7 @@ from typing import List, Tuple, Dict
 from mcp import Mcp
 
 class Request(QGroupBox):
-    def __init__(self, login: QWidget) -> None:
+    def __init__(self) -> None:
         super().__init__()
 
         self.headers, self.params, self.paths = [], [], []
@@ -18,8 +18,6 @@ class Request(QGroupBox):
         self.tool_id = None
 
         self.dados = None
-
-        self.login = login
 
         self.layout = QFormLayout(self)
 

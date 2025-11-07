@@ -4,7 +4,7 @@ from PySide6.QtCore import Qt
 
 import sys
 
-from cache import Cache
+from reciclado.cache import Cache
 # from login import Login
 from lixo.request import Request
 from lixo.response import Response

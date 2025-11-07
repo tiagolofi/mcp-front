@@ -6,10 +6,10 @@ import sys
 
 from cache import Cache
 # from login import Login
-from request import Request
-from response import Response
-from sidebar import Sidebar
-from tools import Tools
+from lixo.request import Request
+from lixo.response import Response
+from lixo.sidebar import Sidebar
+from lixo.tools import Tools
 
 class App(QWidget):
     def __init__(self) -> None:
